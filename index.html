@@ -10,124 +10,264 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="/stylesheets/site.css" rel="stylesheet" />
-    <script src="/javascripts/site.js"></script>
+    <link href="stylesheets/site.css" rel="stylesheet" />
+    <script src="javascripts/modal.js"></script>
+    <script src="javascripts/smoothScroller.js"></script>
+    <script src="javascripts/stickyActiveNavbar.js"></script>
+    <script src="javascripts/gallery.js"></script>
+    <script src="javascripts/technologies.js"></script>
+    <script src="javascripts/site.js"></script>
+
   </head>
   <body>
-    <header><nav class='navbar' role='navigation'>
-<section class='profile'>
+    <header><section class='profile'>
 <figure>
 <img src='images/nigel.png'>
 <h3>Nigel Hing</h3>
 <figcaption>Software Engineer</figcaption>
 </figure>
 <ul>
-<li class='active'><a href="#">Home</a></li>
-<li><a href="#">Portfolio</a></li>
-<li><a href="#">About Me</a></li>
+<li class='active'><a href="#section-1">Apps</a></li>
+<li><a href="#section-2">Static Projects</a></li>
+<li><a href="#section-3">About Me</a></li>
+<li><a href="#section-4">Technologies</a></li>
 </ul>
 <div class='copyright'>
 © Copyright ©2019 All rights reserved Nigel Hing
 </div>
+<div class='logo'>
+<ul>
+<li>
+<a href="https://linkedin.com/in/nigel-hing-271b6a45" target="_blank"><img src='images/linked_in.png'>
+</a></li>
+<li>
+<a href="https://github.com/Nigel33" target="_blank"><img src='images/github_final.png'>
+</a></li>
+</ul>
+</div>
 </section>
-</nav>
 </header>
     <main>
-<section class='home'>
-<h1>Home</h1>
+<section class='apps' id='section-1'>
+<h1>Apps</h1>
 <div>
-<div id='slideshow'>
+<div class='slideshow'>
 <div id='slides'>
-<figure>
-<img src='http://placehold.it/200x180/0066cc/ffffff'>
-<figcaption>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</figcaption>
-</figure>
+<figure data-id='1'>
+<img src='images/sushi_store.png'>
+<figcaption>Sushi Store</figcaption>
+<a href="https://nigel-sushi-store.herokuapp.com/" target="_blank"><div class='back'>
+<h2>Sushi Store</h2>
+<p>A single page e-commerce website built with express and backed with Backbone and Handlebars. It employs bower as a package manager and grunt to automate setup tasks. Backbone router pbject was also used in this project to allow a user to use the back and front button of the browser.</p>
+</div>
+</a></figure>
+<figure data-id='2'>
+<img src='images/myflix.png'>
+<figcaption>MyFlix</figcaption>
+<a href="https://nigel-myflix.herokuapp.com/" target="_blank"><div class='back'>
+<h2>MyFlix</h2>
+<p>A Netflix clone built with Rails and backed with TDD. Unit, Integration and even feature tests are developed for this project with stubbing and recording test suite's HTTP interactions through VCR for a quicker testing process. This site allows users to watch their favorite movies, rate and leave reviews, invite friends and even has a social media feature allowing users to follow each other. Users also have their personal queue where they can queue their movies. Credit card processing is handled by integrating Stripe and emails are handled with mailgun. Background processess are managed by Redis for a more efficient solution. A separate layout is designed for admins to add videso and monitor payments tracked by Stripe webhooks.</p>
+</div>
+</a></figure>
+<figure data-id='3'>
+<img src='images/risk_tracker.png'>
+<figcaption>Risk Tracker</figcaption>
+<a href="https://nigel-risk-tracker.herokuapp.com" target="_blank"><div class='back'>
+<h2>Risk Tracker</h2>
+<p>An internal Content Management System designed with Rails and backed with RSpec unit and integration test suite. An admin can create and assign work items to consultants to be completed. A consultant can work on items, mark completed item and view reviews left by an admin. An admin can also run analytics on consultants' performances.</p>
+</div>
+</a></figure>
+<figure data-id='4'>
+<img src='images/todos_jquery.png'>
+<figcaption>Dynamic Todos</figcaption>
+<a href="https://nigel-todos-with-jquery.herokuapp.com" target="_blank"><div class='back'>
+<h2>Dynamic Todos</h2>
+<p>A dynamic single page application built with Sinatra for the backend and uses jQUery for the frontend. This site uses AJAX and Handlebars to dynamically render elements and content without a full page reload. It manages the CRUD operations and goes a step further by keeping dynamically keeping track of the state of each todo.</p>
+</div>
+</a></figure>
+<figure data-id='5'>
+<img src='images/postIt.png'>
+<figcaption>Post It</figcaption>
+<a href="https://nigel-postit.herokuapp.com/" target="_blank"><div class='back'>
+<h2>Post It</h2>
+<p>A Reddit clone built with Rails. Users can create posts and leave comments on each post. A user can also vote on a post or a comment.</p>
+</div>
+</a></figure>
+<figure data-id='6'>
+<img src='images/todos_sinatra.png'>
+<figcaption>Simple Todos</figcaption>
+<a href="https://nigel-todos-app.herokuapp.com/" target="_blank"><div class='back'>
+<h2>Simple Todos</h2>
+<p>A Sinatra app backed with a database persistence class. A simpler version of the dynamic todos application.</p>
+</div>
+</a></figure>
+<figure data-id='7'>
+<img src='images/contact_manager.png'>
+<figcaption>Contact Manager</figcaption>
+<a href="https://nigel-contact-manager.herokuapp.com/" target="_blank"><div class='back'>
+<h2>Contact Manager</h2>
+<p>A single page application using jQuery as the frontend which dynamically renders content with Handlebars. The contact form has front end built validations to ensure data integrity. A user can insert tags to group contacts and tags can be used to search for contacts having that tag. A user can also search for contacts by using the search bar.</p>
+</div>
+</a></figure>
+<figure data-id='8'>
+<img src='images/photo_blog.png'>
+<figcaption>Photo Blog</figcaption>
+<a href="https://nigel-photo-blog.herokuapp.com/" target="_blank"><div class='back'>
+<h2>Photo Blog</h2>
+<p>A single page Express application backed with Backbone.js. Each photo is dynamically rendered with Handlebars which also initates an AJAX request to pull in the comments for each photo. New comments can be added which is stored in the server via AJAX.</p>
+</div>
+</a></figure>
+<figure data-id='9'>
+<img src='images/music_store.png'>
+<figcaption>Music Store</figcaption>
+<a href="https://nigel-music-store.herokuapp.com/" target="_blank"><div class='back'>
+<h2>Music Store</h2>
+<p>A simple music store site built with Backbone.js. Albums purchased are kept tracked off in a cart which is dynamically rendered with Handlebars.</p>
+</div>
+</a></figure>
 </div>
 <ul>
 <li><a href="#" class="prev">Prev</a></li>
 <li><a href="#" class="next">Next</a></li>
 </ul>
 </div>
-<div>
-<span class='dot active'></span>
-<span class='dot'></span>
-<span class='dot'></span>
+<div class='icons'>
+<span class='dot active' data-id='1'></span>
+<span class='dot' data-id='2'></span>
+<span class='dot' data-id='3'></span>
+<span class='dot' data-id='4'></span>
+<span class='dot' data-id='5'></span>
+<span class='dot' data-id='6'></span>
+<span class='dot' data-id='7'></span>
+<span class='dot' data-id='8'></span>
+<span class='dot' data-id='9'></span>
 </div>
 </div>
+
 </section>
-<section class='static-projects'>
+<section class='static-projects' id='section-2'>
 <h1>Static Projects</h1>
 <article class='cards'>
 <div class='flip-card'>
 <div class='flip-card-inner'>
 <div class='flip-card-front'>
-<img src='http://placehold.it/200x180/0066cc/ffffff'>
+<img src='images/guess.png'>
 </div>
-<div class='flip-card-back'>
-<h2>Static Project 1</h2>
-<p>Awesome project</p>
+<a href="https://nigel33.github.io/guess-a-word/" target="_blank"><div class='flip-card-back'>
+<h2>Guess a Word</h2>
+<p>Try to guess the hidden word! You only have as many tries as  the amount of apples on the tree! Every incorrect guess removes an apple. Built with Javascript and jQuery.</p>
 </div>
-</div>
-</div>
-<div class='flip-card'>
-<div class='flip-card-inner'>
-<div class='flip-card-front'>
-<img src='http://placehold.it/200x180/0066cc/ffffff'>
-</div>
-<div class='flip-card-back'>
-<h2>Static Project 2</h2>
-<p>Awesome project</p>
-</div>
-</div>
+</a></div>
 </div>
 <div class='flip-card'>
 <div class='flip-card-inner'>
 <div class='flip-card-front'>
-<img src='http://placehold.it/200x180/0066cc/ffffff'>
+<img src='images/dynamic_animation.png'>
 </div>
-<div class='flip-card-back'>
-<h2>Static Project 3</h2>
-<p>Awesome project</p>
+<a href="https://nigel33.github.io/dynamic-animation/" target="_blank"><div class='flip-card-back'>
+<h2>Dynamic Animation</h2>
+<p>Add a shape you want from the selection provided and input in the starting and ending X & Y coordinates. Press "Start" and watch the shapes come to live! Built with Javascript and jQuery.</p>
 </div>
-</div>
-</div>
-<div class='flip-card'>
-<div class='flip-card-inner'>
-<div class='flip-card-front'>
-<img src='http://placehold.it/200x180/0066cc/ffffff'>
-</div>
-<div class='flip-card-back'>
-<h2>Static Project 4</h2>
-<p>Awesome project</p>
-</div>
-</div>
+</a></div>
 </div>
 <div class='flip-card'>
 <div class='flip-card-inner'>
 <div class='flip-card-front'>
-<img src='http://placehold.it/200x180/0066cc/ffffff'>
+<img src='images/inventory_order.png'>
 </div>
-<div class='flip-card-back'>
-<h2>Static Project 5</h2>
-<p>Awesome project</p>
+<a href="https://nigel33.github.io/inventory_orders/" target="_blank"><div class='flip-card-back'>
+<h2>Inventory Order Form</h2>
+<p>A simple inventory form to keep track of orders. Uses Handlerbars for dynamic element rendering as orders are being placed.</p>
 </div>
-</div>
+</a></div>
 </div>
 <div class='flip-card'>
 <div class='flip-card-inner'>
 <div class='flip-card-front'>
-<img src='http://placehold.it/200x180/0066cc/ffffff'>
+<img src='images/grocery_list.png'>
 </div>
-<div class='flip-card-back'>
-<h2>Static Project 6</h2>
-<p>Awesome project</p>
+<a href="https://nigel33.github.io/grocery-list/" target="_blank"><div class='flip-card-back'>
+<h2>Grocery List</h2>
+<p>A simple form to keep track of grocery items.</p>
 </div>
+</a></div>
 </div>
+<div class='flip-card'>
+<div class='flip-card-inner'>
+<div class='flip-card-front'>
+<img src='images/search_filtering.png'>
+</div>
+<a href="https://nigel33.github.io/search_filtering/" target="_blank"><div class='flip-card-back'>
+<h2>Search Filtering</h2>
+<p>A search form which dynamically filters out selection based on the checkboxes selected. Items are indexed in a JSON file to dynamically pull in selected items. Built with JavaScript and jQuery.</p>
+</div>
+</a></div>
+</div>
+<div class='flip-card'>
+<div class='flip-card-inner'>
+<div class='flip-card-front'>
+<img src='images/company_site.png'>
+</div>
+<a href="https://nigel33.github.io/simple-company-site/" target="_blank"><div class='flip-card-back'>
+<h2>Company Site</h2>
+<p>A full company site with 3 pages linked together. Renders a modal with an overlay when a team member's photo is clicked. Built with pure HTML and CSS.</p>
+</div>
+</a></div>
+</div>
+<div class='flip-card'>
+<div class='flip-card-inner'>
+<div class='flip-card-front'>
+<img src='images/gallery.png'>
+</div>
+<a href="https://nigel33.github.io/photo_gallery/" target="_blank"><div class='flip-card-back'>
+<h2>Photo Gallery</h2>
+<p>A photo gallery that fades in a photo to the main frame depending on the selected photo. Uses CSS to hide elements and jQuery to reveal each photo selected.</p>
+</div>
+</a></div>
+</div>
+<div class='flip-card'>
+<div class='flip-card-inner'>
+<div class='flip-card-front'>
+<img src='images/comic.png'>
+</div>
+<a href="https://nigel33.github.io/simple-comic/" target="_blank"><div class='flip-card-back'>
+<h2>Comic</h2>
+<p>Just sit back and relax as the texts get revealed for this comic strip! Uses jQuery animation to fade out elements covering the texts from top to bottom.</p>
+</div>
+</a></div>
 </div>
 </article>
 
 </section>
-<section class='technologies'>
+<section class='about' id='section-3'>
+<h1>About Me</h1>
+<div class='container'>
+<div class='front'>
+<img src='images/nigel_mural.jpg'>
+<div class='back'>
+<div>Click for more details!</div>
+</div>
+</div>
+<div class='modal_container'>
+<div class='modal_menu'>
+<dl>
+<dt>
+<img src='images/nigel_mural.jpg'>
+</dt>
+<dd>In my opinion, coding is not a skill one just picks up and stash away. Its a lifestyle which requires continuous effort to be passionate about learning and being updated with current technologies. Much like working out or playing a musical instrument, the path to mastery is endless which is why its so enjoyable. As for what's next, I'm contemplating picking up Websockets, Docker and Kubernetes after I finish up React and Python someday. Some fun facts about me: I love cooking, hiking and working out (if I have time!)</dd>
+</dl>
+</div>
+<div class='modal_layer'></div>
+</div>
+<article>
+<p>Thanks for visiting my personal website! I hope you enjoyed looking through my porfolio of projects and interacted with them. I am a full stack web developer and I love providing efficient, scalable solutions to my clients through the agile development process backed with test driven development.</p>
+<br>
+<p>I have years of experience working with Ruby, JavaScript and I am proficient with both front end and back end frameworks such as Ruby on Rails and Backbone. Click on my picture to the left(or top ~ responsive design) to see more details!</p>
+</article>
+</div>
+
+</section>
+<section class='technologies' id='section-4'>
 <h1>Technologies</h1>
 <div class='container'>
 <article class='current'>
@@ -142,7 +282,7 @@
 <li>Java (Basic)</li>
 </ul>
 </div>
-<div class='lib-frameworks'>
+<div class='lib-frameworks toggle'>
 <h2>Libraries & Web Frameworks</h2>
 <ul>
 <li>Rails</li>
@@ -153,7 +293,7 @@
 <li>React-Native (Basic)</li>
 </ul>
 </div>
-<div class='testing'>
+<div class='testing toggle'>
 <h2>Testing Frameworks</h2>
 <ul>
 <li>RSpec</li>
@@ -161,6 +301,7 @@
 <li>Jasmine</li>
 </ul>
 </div>
+<button>Show More</button>
 </article>
 <article class='others'>
 <div class='miscellaneous'>
@@ -175,35 +316,41 @@
 <li>Middleman</li>
 </ul>
 </div>
-<div class='pending'>
+<div class='pending toggle'>
 <h2>Pending</h2>
 <ul>
-<li>React-Native (In Process)</li>
-<li>React</li>
+<li>React-Native (In Progress)</li>
+<li>React (In Progress)</li>
 <li>Python</li>
 <li>Django</li>
+<li>Docke</li>
 <li>Vue</li>
 </ul>
 </div>
+<button>Show More</button>
 </article>
 </div>
 
 </section>
-<section class='about'>
-<h1>About Me</h1>
-<img src='images/nigel_seashore.jpg'>
-<div class='modal_menu'>
-<header>
-<h1>Example</h1>
-</header>
+<footer>
+<section class='footer'>
+<div class='footer-detail'>
 <dl>
-<dt></dt>
-<dd>Just some text</dd>
-</dl>
+<dt>Connect With Me!</dt>
+<div class='flex-container'>
+<dd>
+<a href="https://linkedin.com/in/nigel-hing-271b6a45" target="_blank"><img src='images/linked_in.png'>
+</a></dd>
+<dd>
+<a href="https://github.com/Nigel33" target="_blank"><img src='images/github_final.png'>
+</a></dd>
 </div>
-<div class='modal_layer'></div>
-
+</dl>
+<p>nigelhing1@gmail.com</p>
+</div>
 </section>
+
+</footer>
 </main>
 
   </body>

@@ -1,16 +1,34 @@
 
-require 'handlebars'
+NavBarHeightManager = {
+	originalHeight: null,
+	setHeight: function() {
+		var height = $('body').height();
+		$('header').height(height);
+		console.log(height + 'current');
+	},
 
-ModalHandler = {
+	setOriginalHeight: function() {
+		console.log($('body').height());
+
+		// if ($('body').height() > this.originalHeight) {
+		// 	return;
+		// }
+
+		$('header').height(this.originalHeight);
+	},
+
 	init: function() {
-		console.log('fdf');
+		this.originalHeight = $('body').height();
 	},
 };
 
 $(function() {
-	var height = $('main').height();
-	$('.navbar').height(height);
-	
-	console.log('fdfdsddsd');
+	NavBarHeightManager.init();
 	ModalHandler.init();
+	SmoothScroller.init();
+	StickyActiveNavbar.init();
+	Gallery.init();
+	Technologies.init();
 });
+
+

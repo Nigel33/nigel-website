@@ -1,26 +1,24 @@
 @import url("whitespace-reset.css");
-html {
-  height: 100%; }
-
 body {
   display: flex;
-  height: 100%;
   font-size: 20px;
-  font-family: 'Roboto Condensed', sans-serif; }
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #0e173a; }
 
 h1 {
   margin-bottom: 15px;
   text-align: center;
+  font-family: 'Gentium Basic', serif;
   font-size: 25px;
-  color: #616161; }
+  color: black; }
 
 header {
-  width: 25%;
-  height: 100%;
-  background-color: #E6A1A1; }
+  width: 25%; }
   header .profile {
-    position: fixed;
-    margin: 100px auto 10px; }
+    position: -webkit-sticky;
+    position: sticky;
+    top: 45px;
+    margin: 45px auto 0; }
     header .profile img {
       border-radius: 10px;
       display: block;
@@ -29,13 +27,14 @@ header {
       height: auto; }
     header .profile h3, header .profile figcaption {
       text-align: center;
-      margin-top: 10px; }
+      margin-top: 10px;
+      margin-bottom: 15px; }
     header .profile h3 {
       font-family: 'Gentium Basic', serif;
-      color: #614444;
+      color: silver;
       font-size: 30px; }
     header .profile figcaption {
-      color: #616161;
+      color: #FFD700;
       font-size: 26px; }
     header .profile ul {
       text-transform: uppercase; }
@@ -49,8 +48,18 @@ header {
         text-align: center;
         margin-bottom: 15px; }
         header .profile ul li a {
-          color: #614444;
+          color: grey;
           text-decoration: none; }
+    header .profile .logo {
+      padding-top: 30px; }
+      header .profile .logo ul {
+        display: flex;
+        justify-content: center; }
+        header .profile .logo ul img {
+          padding: 0 15px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%; }
     header .profile .copyright {
       text-align: center;
       margin-top: 30px;
@@ -58,34 +67,62 @@ header {
       font-size: 12px; }
 
 main {
-  margin-right: 20px;
-  webkit-box-shadow: 10px 0 5px -2px #888;
-  -webkit-box-shadow: 10px 0 5px -2px #888;
-          box-shadow: 10px 0 5px -2px #888;
+  background: url("../images/background_final.jpg") no-repeat;
+  background-size: 100% 100%;
   width: 100%;
-  background-color: #E1E1E1;
   overflow: auto; }
 
-section.home {
-  width: 90%;
-  margin: 30px auto 40px; }
-  section.home div {
+section.apps {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 0 30px; }
+  section.apps div {
     width: 90%;
     height: 400px;
     margin: 0 auto; }
-    section.home div #slideshow {
+    section.apps div .slideshow {
       max-width: 800px;
-      min-width: 600px;
+      min-width: 300px;
       position: relative;
       margin: 0 auto; }
-      section.home div #slideshow img {
+      section.apps div .slideshow figure {
+        position: relative; }
+        section.apps div .slideshow figure .back {
+          overflow-y: auto;
+          position: absolute;
+          background-color: black;
+          color: white;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          section.apps div .slideshow figure .back:hover {
+            cursor: pointer;
+            opacity: 1;
+            -webkit-transition: 0.5s;
+            transition: 0.5s; }
+          section.apps div .slideshow figure .back h2 {
+            -ms-grid-row-align: stretch;
+                align-self: stretch;
+            padding: 10px 0 20px; }
+          section.apps div .slideshow figure .back p {
+            padding: 0 10px; }
+      section.apps div .slideshow figure + figure {
+        display: none; }
+      section.apps div .slideshow img {
         width: 100%;
         height: 350px;
         vertical-align: middle; }
-      section.home div #slideshow figcaption {
+      section.apps div .slideshow figcaption {
         background-color: #616161;
         color: white; }
-      section.home div #slideshow .prev, section.home div #slideshow .next {
+      section.apps div .slideshow .prev, section.apps div .slideshow .next {
         cursor: pointer;
         position: absolute;
         top: 40%;
@@ -102,84 +139,107 @@ section.home {
                 user-select: none;
         text-indent: -8685px;
         background: transparent url("../images/icon_pager.png") 0 0 no-repeat; }
-      section.home div #slideshow .next {
+      section.apps div .slideshow .next {
         right: 40px;
         background-position: 100% 0; }
-      section.home div #slideshow .prev {
+      section.apps div .slideshow .prev {
         left: 40px; }
-    section.home div div {
+    section.apps div div {
       text-align: center; }
-      section.home div div .dot {
+      section.apps div div .dot {
         cursor: pointer;
         height: 15px;
         width: 15px;
         margin: 0 2px;
-        background-color: #bbb;
+        background-color: #717171;
         border-radius: 50%;
         display: inline-block;
         -webkit-transition: background-color 0.6s ease;
         transition: background-color 0.6s ease; }
-        section.home div div .dot:hover, section.home div div .dot.active {
-          background-color: #717171; }
+        section.apps div div .dot:hover, section.apps div div .dot.active {
+          background-color: black; }
 
-section.static-projects .cards {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; }
-  section.static-projects .cards .flip-card {
-    background-color: transparent;
-    width: 20vw;
-    height: 20vw;
-    border: 1px solid #f1f1f1;
-    -webkit-perspective: 1000px;
-            perspective: 1000px;
-    margin: 0 15px 15px; }
-    section.static-projects .cards .flip-card:hover {
-      cursor: pointer; }
-      section.static-projects .cards .flip-card:hover .flip-card-inner {
-        -webkit-transform: rotateY(180deg);
-                transform: rotateY(180deg); }
-    section.static-projects .cards .flip-card .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      -webkit-transition: -webkit-transform 0.8s;
-      transition: -webkit-transform 0.8s;
-      transition: transform 0.8s;
-      transition: transform 0.8s, -webkit-transform 0.8s;
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d; }
-      section.static-projects .cards .flip-card .flip-card-inner .flip-card-front, section.static-projects .cards .flip-card .flip-card-inner .flip-card-back {
-        position: absolute;
+section.static-projects {
+  padding-top: 15px;
+  background-color: #fffdd0; }
+  section.static-projects .cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    section.static-projects .cards .flip-card {
+      background-color: transparent;
+      width: 280px;
+      height: 280px;
+      border: 1px solid #f1f1f1;
+      -webkit-perspective: 1000px;
+              perspective: 1000px;
+      margin: 0 15px 15px; }
+      section.static-projects .cards .flip-card:hover {
+        cursor: pointer; }
+        section.static-projects .cards .flip-card:hover .flip-card-inner {
+          -webkit-transform: rotateY(180deg);
+                  transform: rotateY(180deg); }
+      section.static-projects .cards .flip-card .flip-card-inner {
+        position: relative;
         width: 100%;
         height: 100%;
-        -webkit-backface-visibility: hidden;
-                backface-visibility: hidden; }
-        section.static-projects .cards .flip-card .flip-card-inner .flip-card-front img, section.static-projects .cards .flip-card .flip-card-inner .flip-card-back img {
+        text-align: center;
+        -webkit-transition: -webkit-transform 0.8s;
+        transition: -webkit-transform 0.8s;
+        transition: transform 0.8s;
+        transition: transform 0.8s, -webkit-transform 0.8s;
+        -webkit-transform-style: preserve-3d;
+                transform-style: preserve-3d; }
+        section.static-projects .cards .flip-card .flip-card-inner .flip-card-front, section.static-projects .cards .flip-card .flip-card-inner .flip-card-back {
+          position: absolute;
           width: 100%;
-          height: 100%; }
-      section.static-projects .cards .flip-card .flip-card-inner .flip-card-back {
-        background-color: dodgerblue;
-        color: white;
-        -webkit-transform: rotateY(180deg);
-                transform: rotateY(180deg); }
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden; }
+          section.static-projects .cards .flip-card .flip-card-inner .flip-card-front img, section.static-projects .cards .flip-card .flip-card-inner .flip-card-back img {
+            width: 100%;
+            height: 100%; }
+        section.static-projects .cards .flip-card .flip-card-inner .flip-card-back {
+          overflow-y: auto;
+          background-color: black;
+          -webkit-transform: rotateY(180deg);
+                  transform: rotateY(180deg);
+          color: white; }
+          section.static-projects .cards .flip-card .flip-card-inner .flip-card-back h2 {
+            padding: 10px 0 20px; }
+          section.static-projects .cards .flip-card .flip-card-inner .flip-card-back p {
+            padding: 0 10px; }
 
 section.technologies {
   width: 100%;
   margin-bottom: 15px; }
   section.technologies .container {
     margin: 0 auto;
+    padding: 0 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; }
     section.technologies .container .current, section.technologies .container .others {
       height: 0%;
       text-align: center;
-      margin: 10px 10px 0;
+      margin: 10px;
       width: 45%;
       background-color: white;
       padding: 10px 0; }
+      section.technologies .container .current button, section.technologies .container .others button {
+        background-color: white;
+        width: 150px;
+        height: auto;
+        padding: 8px;
+        font-size: 20px;
+        border: 2px solid black; }
+        section.technologies .container .current button:hover, section.technologies .container .others button:hover {
+          border: 2px solid silver;
+          background-color: black;
+          color: white;
+          cursor: pointer; }
+      section.technologies .container .current .lib-frameworks, section.technologies .container .current .testing, section.technologies .container .current .pending, section.technologies .container .others .lib-frameworks, section.technologies .container .others .testing, section.technologies .container .others .pending {
+        display: none; }
       section.technologies .container .current h2, section.technologies .container .others h2 {
         width: 100%;
         font-size: 24px;
@@ -189,42 +249,150 @@ section.technologies {
         padding: 10px 0; }
 
 section.about {
-  width: 100%; }
-  section.about img {
-    width: 250px;
-    height: height;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-    cursor: pointer; }
-  section.about .modal_layer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.6); }
-  section.about .modal_menu {
-    border: 3px solid #FF552A;
-    border-radius: 15px;
-    width: 500px;
-    height: auto;
-    position: absolute;
-    top: 100px;
-    left: 50%;
-    margin: 0 0 0 -250px;
-    z-index: 9;
-    background-color: white;
-    padding: 20px; }
-    section.about .modal_menu header {
+  padding-top: 15px;
+  width: 100;
+  background-color: black;
+  color: white;
+  margin-bottom: 30px; }
+  section.about h1 {
+    color: white;
+    text-align: center; }
+  section.about .container {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    section.about .container article {
+      width: 45%; }
+    section.about .container .front {
+      margin-left: 40px;
+      position: relative;
+      width: 45%;
+      height: auto; }
+      section.about .container .front .back {
+        display: flex;
+        position: absolute;
+        background-color: white;
+        color: black;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        align-items: center;
+        justify-content: center; }
+        section.about .container .front .back:hover {
+          cursor: pointer;
+          opacity: 1;
+          -webkit-transition: 1s;
+          transition: 1s; }
+      section.about .container .front img {
+        width: 100%;
+        height: 100%; }
+    section.about .container .modal_container {
+      display: none; }
+      section.about .container .modal_container .modal_layer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.6); }
+      section.about .container .modal_container .modal_menu {
+        color: black;
+        width: 500px;
+        height: auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        z-index: 9;
+        background-color: white;
+        padding: 20px; }
+        section.about .container .modal_container .modal_menu header {
+          text-align: center;
+          font-weight: heavy;
+          color: #90B362; }
+        section.about .container .modal_container .modal_menu dl {
+          padding-bottom: 10px; }
+          section.about .container .modal_container .modal_menu dl dt {
+            float: left;
+            padding-right: 15px;
+            text-align: right; }
+            section.about .container .modal_container .modal_menu dl dt img {
+              height: auto;
+              width: 200px; }
+
+.footer {
+  display: flex;
+  margin-top: 50px;
+  width: 100%;
+  height: 400px;
+  background: url("../images/footer2.jpeg") no-repeat;
+  background-size: 100% 100%;
+  align-items: center; }
+  .footer .footer-detail {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 50%;
+    width: 100%; }
+    .footer .footer-detail dl {
+      opacity: 1;
+      margin: 0 auto;
+      width: 40%;
+      height: 60%; }
+      .footer .footer-detail dl dt {
+        margin: 15px 0;
+        font-size: 30px;
+        text-align: center; }
+      .footer .footer-detail dl .flex-container {
+        display: flex;
+        justify-content: center; }
+        .footer .footer-detail dl .flex-container dd {
+          display: block;
+          padding: 0px 15px;
+          text-align: center; }
+          .footer .footer-detail dl .flex-container dd img {
+            display: block;
+            opacity: 1;
+            background: transparent;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%; }
+    .footer .footer-detail p {
+      display: block;
+      width: 100%;
       text-align: center;
-      font-weight: heavy;
-      color: #90B362; }
-    section.about .modal_menu dl {
-      display: flex;
-      padding-bottom: 10px; }
-      section.about .modal_menu dl dt {
-        width: 40%;
-        padding-right: 15px;
-        text-align: right; }
+      font-size: 25px;
+      text-decoration: underline;
+      -webkit-text-decoration-color: white;
+              text-decoration-color: white; }
+
+@media (max-width: 800px) {
+  header {
+    display: none; }
+  .flip-card {
+    width: 200px !important;
+    height: 200px !important; }
+  .about article {
+    padding: 15px !important;
+    width: 80% !important;
+    margin: 0 auto !important; }
+  .about .front {
+    width: 80% !important;
+    margin-left: 0 !important; }
+  .about .back {
+    margin-left: 0 !important; } }
+
+@media (max-width: 600px) {
+  .technologies .current, .technologies .others {
+    width: 80% !important;
+    margin: 0 auto !important; }
+  .footer .footer-detail {
+    height: 70%; }
+  .about .modal_menu {
+    width: 90% !important; } }
