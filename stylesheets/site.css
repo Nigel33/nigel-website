@@ -90,8 +90,8 @@ section.apps {
         section.apps div .slideshow figure .back {
           overflow-y: auto;
           position: absolute;
-          background-color: black;
-          color: white;
+          background-color: white;
+          color: black;
           width: 100%;
           height: 100%;
           top: 0;
