@@ -65,7 +65,6 @@ const FigureDisplay = {
 	},
 
 	fadeOutVisibleFigures: function(callback) {
-		console.log('calling');
 		Gallery.figures.filter(':visible').stop().fadeOut(400, function() {
 			callback();
 		}); 

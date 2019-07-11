@@ -160,7 +160,7 @@ section.apps {
           background-color: black; }
 
 section.static-projects {
-  padding-top: 15px;
+  padding: 20px;
   background-color: #fffdd0; }
   section.static-projects .cards {
     display: flex;
@@ -173,7 +173,7 @@ section.static-projects {
       border: 1px solid #f1f1f1;
       -webkit-perspective: 1000px;
               perspective: 1000px;
-      margin: 0 15px 15px; }
+      margin: 0 15px px; }
       section.static-projects .cards .flip-card:hover {
         cursor: pointer; }
         section.static-projects .cards .flip-card:hover .flip-card-inner {
@@ -210,9 +210,30 @@ section.static-projects {
           section.static-projects .cards .flip-card .flip-card-inner .flip-card-back p {
             padding: 0 10px; }
 
+section.risk_tracker {
+  background-color: black;
+  color: white; }
+  section.risk_tracker h1 {
+    padding-top: 15px;
+    color: white; }
+  section.risk_tracker .container {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    section.risk_tracker .container .description {
+      text-align: justify;
+      width: 40%; }
+      section.risk_tracker .container .description p {
+        margin-bottom: 15px; }
+    section.risk_tracker .container iframe {
+      width: 50%; }
+
 section.technologies {
   width: 100%;
   margin-bottom: 15px; }
+  section.technologies h1 {
+    padding-top: 15px; }
   section.technologies .container {
     margin: 0 auto;
     padding: 0 25px;
@@ -265,7 +286,6 @@ section.about {
     section.about .container article {
       width: 45%; }
     section.about .container .front {
-      margin-left: 40px;
       position: relative;
       width: 45%;
       height: auto; }
@@ -386,7 +406,9 @@ section.about {
     width: 80% !important;
     margin-left: 0 !important; }
   .about .back {
-    margin-left: 0 !important; } }
+    margin-left: 0 !important; }
+  .risk_tracker iframe, .risk_tracker .description {
+    width: 90% !important; } }
 
 @media (max-width: 600px) {
   .technologies .current, .technologies .others {
