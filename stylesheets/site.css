@@ -173,7 +173,7 @@ section.static-projects {
       border: 1px solid #f1f1f1;
       -webkit-perspective: 1000px;
               perspective: 1000px;
-      margin: 0 15px px; }
+      margin: 0 15px 20px; }
       section.static-projects .cards .flip-card:hover {
         cursor: pointer; }
         section.static-projects .cards .flip-card:hover .flip-card-inner {
